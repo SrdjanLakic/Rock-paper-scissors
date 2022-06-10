@@ -1,0 +1,21 @@
+body {
+  background-image: url('img/rps1.jpg');
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+}
+
+.choice {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 3rem;
+  transition: 100ms;
+}
+
+.choice:hover {
+  transform: scale(1.3);
+}

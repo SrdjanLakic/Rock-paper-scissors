@@ -11,8 +11,18 @@ let result;
 possibleChoices.forEach((possibleChoice) =>
   possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id;
+    if (userChoice === 'rock') {
+      userChoice = '✊';
+    }
+    if (userChoice === 'paper') {
+      userChoice = '✋';
+    }
+    if (userChoice === 'scissors') {
+      userChoice = '✌';
+    }
     userChoiceDisplay.innerHTML = userChoice;
     generateComputerChoice();
+    console.log(userChoice);
     getResult();
   })
 );
@@ -20,36 +30,36 @@ possibleChoices.forEach((possibleChoice) =>
 function generateComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3) + 1;
   if (randomNumber === 1) {
-    computerChoice = 'rock';
+    computerChoice = '✊';
   }
   if (randomNumber === 2) {
-    computerChoice = 'paper';
+    computerChoice = '✋';
   }
   if (randomNumber === 3) {
-    computerChoice = 'scissors';
+    computerChoice = '✌';
   }
   computerChoiceDisplay.innerHTML = computerChoice;
 }
 
 function getResult() {
   if (computerChoice === userChoice) result = 'It is draw';
-  if (computerChoice === 'rock' && userChoice === 'papper') {
-    result = 'You WIN';
+  if (computerChoice === '✊' && userChoice === '✋') {
+    result = 'You WIN 🏆';
   }
-  if (computerChoice === 'rock' && userChoice === 'scissors') {
-    result = 'You lose';
+  if (computerChoice === '✊' && userChoice === '✌') {
+    result = 'You lose ⛔';
   }
-  if (computerChoice === 'paper' && userChoice === 'scissors') {
-    result = 'You WIN';
+  if (computerChoice === '✋' && userChoice === '✌') {
+    result = 'You WIN 🏆';
   }
-  if (computerChoice === 'paper' && userChoice === 'rock') {
-    result = 'You lose';
+  if (computerChoice === '✋' && userChoice === '✊') {
+    result = 'You lose ⛔';
   }
-  if (computerChoice === 'scissors' && userChoice === 'rock') {
-    result = 'You WIN';
+  if (computerChoice === '✌' && userChoice === '✊') {
+    result = 'You WIN 🏆';
   }
-  if (computerChoice === 'scissors' && userChoice === 'paper') {
-    result = 'You lose';
+  if (computerChoice === '✌' && userChoice === '✋') {
+    result = 'You lose ⛔';
   }
   resultDisplay.innerHTML = result;
 }

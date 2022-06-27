@@ -1,5 +1,7 @@
 body {
   background-image: url('img/rps1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .choices {
@@ -18,4 +20,19 @@ body {
 
 .choice:hover {
   transform: scale(1.3);
+}
+
+.info {
+  margin-top: 1rem;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  font-size: 2rem;
+}
+.score {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
 }
